@@ -50,9 +50,10 @@ pipeline {
             steps {
                 echo 'Building Spring Boot JAR with Gradle...'
                 sh 'chmod +x gradlew'
-                sh './gradlew wrapper'
-                sh './gradlew dependencies --no-daemon || true'
-                sh './gradlew spotlessApply clean  build -x test  --no-daemon'
+                // sh './gradlew wrapper'
+                // sh './gradlew dependencies --no-daemon || true'
+                // sh './gradlew spotlessApply clean  build -x test  --no-daemon'
+                sh './gradlew build -x test'
 
             }
         }
